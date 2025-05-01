@@ -1,62 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="styles.css" />
     <!--fontawesome cdn for free icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body>
-    <main>
-      <div class="main-container">
+    <!-- jsDelivr is often faster -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>    
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#" target="_self"><i class="fa-brands fa-gg-circle" aria-hidden="true"></i></a>
+      </div>
+      <ul class="navbar-contents">
+        <li><a href="#" target="_self">Home</a></li>
+        <li><a href="#" target="_self">About</a></li>
+        <li><a href="#" target="_self">Contact Us</a></li>
+        <li><a href="#" target="_self">Help</a></li>
+      </ul> 
+    </nav>  
+  </header>
+  <main>
+    <div class="main-container">
+      <div class="heading-container">
         <h1> Currency Converter</h1>
+        <!-- <p>Calculate live currency and foreign exchange rates</p> -->
+      </div> 
+      <div class="form-container">  
         <form>
           <div class="form-row">
-            <div class="amount">
+            <div class="amount border">              
               <label for="amount">Amount</label>
-              <input type="text" name="amount" id="amount" value ="1" placeholder="1">
+              <input type="text" name="amount" id="amount" value ="1" placeholder="1" required>              
             </div>
-            <div class="dropdown">
+            <div class="dropdown border">
               <label for="from">From</label>
               <div class="select-container">
-                <img src="https://flagsapi.com/BE/flat/48.png">
+                <img id="from-img" src="https://flagsapi.com/US/flat/48.png" aria-hidden="true">
                 <select name = "from" id = "from">
-                  <option value = "AED">AED - UAE Dirham</option>
-                  <option value = "AUD">AUD - Australian Dollar</option>
-                  <option value = "EUR">EUR - Euro</option>
-                  <option value = "GBP">GBP - British Pound Sterling</option>
-                  <option value = "INR">INR - Indian Rupee</option>
-                  <option value = "USD">USD - United States Dollar</option>
                 </select>
               </div>
             </div>
             <div class="exchange-container">
-              <button id="exchange-btn"><i class="fa-solid fa-arrow-right-arrow-left" aria-label="Swap currencies"></i>
+              <button id="exchange-btn" aria-label="Swap currencies"><i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i>
               </button>
             </div>
-            <div class="dropdown">
+            <div class="dropdown border">
               <label for="to">To</label>
               <div class="select-container">
-                <img src="https://flagsapi.com/BE/flat/48.png">
+                <img id="to-img" src="https://flagsapi.com/IN/flat/48.png" aria-hidden="true">
                 <!--https://flagsapi.com/-->
                 <select name = "to" id = "to">
-                  <option value = "AED">AED - UAE Dirham</option>
-                  <option value = "AUD">AUD - Australian Dollar</option>
-                  <option value = "EUR">EUR - Euro</option>
-                  <option value = "GBP">GBP - British Pound Sterling</option>
-                  <option value = "INR">INR - Indian Rupee</option>
-                  <option value = "USD">USD - United States Dollar</option>
                 </select>
               </div>
             </div>
           </div>
-          <div class="msg-container">
-            <p></p>
-          </div>
-          <button id="convert-btn">Convert</button>
+          <div class="form-row">
+            <div class="result">
+              <p id="msg"></p>
+              <p id="exchange-rate"></p>
+            </div>
+            <button id="convert-btn">Convert</button>
+          </div>          
         </form>
       </div>
-    </main>
-    <script src="script.js"></script>
+    </div>
+  </main>
+  <!-- order matters when linking js files. last script is the main script file -->
+  <script src="codes.js"></script> 
+  <script src="script.js"></script>
   </body>
 </html>
