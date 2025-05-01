@@ -1,8 +1,243 @@
 *{
   margin: 0px;
   padding: 0px;
+  font-family:Arial, Helvetica, sans-serif;
+  box-sizing: border-box; /*border width comes within element's width, and it's not additional*/
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  /* display: flex; */
+  background: linear-gradient(#000329,#0D5DBF);
+  /* 00076a  */
+   /* 4190F1 */
+}
+
+.navbar{
+  height: 4.5rem;
+  position: fixed;
+  width:100vw;
+  padding: 0.75rem 0.75rem;
+  top: 0rem;
+  left: 0rem;  
+  background-color: transparent;
+  /* background: rgba(0, 7, 106, 0.4);  */
+  /* backdrop-filter: blur(4px); optional: adds glass-like blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-size: 3.5rem;
+}
+
+.navbar-contents{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+}
+
+li{
+  list-style-type: none;
+}
+
+.navbar a{
+  text-decoration: none;
+  color: white;
 }
 
 .main-container{
-  height:;
+  height:100vh;
+  /* width: 80vw; */
+  margin-top: 4.5rem; /*for navbar*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /*space btwn flex items*/
+  /* flex-wrap: wrap; */
+}
+
+
+h1{
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.border{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px #ccc;
+  /* box-shadow: 6px 4px 20px 15px rgba(0, 0, 0, 0.3); */
+}
+
+.form-container{
+  /* min-height: 30vh; */
+  max-width: 90vw;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  /* box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); */
+  box-shadow: 6px 4px 20px 15px rgba(0, 0, 0, 0.3);
+}
+
+form{
+  /* min-height: 40%; */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.form-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.amount,.dropdown{
+  flex: 1;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* .form-row .amount{
+  width: 20%;
+} */
+
+.form-row input,select{
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  /* background-color: blue; */
+  /* font-size: 1rem; */
+}
+
+.form-row input,select{
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+
+.form-row label{
+  font-size: 1rem;
+  color: grey;
+  font-weight: 400;
+}
+
+.select-container{
+  padding: 0rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 1rem; */
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+}
+
+.select-container img{
+  width: 1.5rem;
+}
+
+.exchange-container{
+  flex: 0 0 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exchange-container button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.exchange-container i{
+  font-size: 1.5rem;
+}
+
+#convert-btn{
+  width: 25%;
+  font-size: 1.25rem;
+  color: white;
+  padding: 0.5rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background-color: #0C54AC;
+  cursor: pointer;
+}
+
+.form-row p{
+  font-size: 1.75rem;
+  font-weight: 550;
+  color: grey;
+  visibility: hidden;
+}
+
+.form-row #exchange-rate{
+  font-size: 1rem;
+}
+
+/* for responsiveness 
+1. tablets (<= 1024 px)
+2. phones (<= 600px)
+*/
+
+@media (max-width: 1024px) {
+  /* .form-container{
+    width: 100%;
+    max-width: 500px;
+  } */
+  .form-row{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .form-row label{
+    font-size: 1.5rem;
+    color: grey;
+    font-weight: 400;
+  }
+
+  .form-row input,select{
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .exchange-container i{
+    font-size: 2.5rem;
+  }
+
+  #convert-btn{
+    width: 100%;
+    font-size: 1.75rem;
+  }
+
+  h1{
+    text-align: center;
+    font-size: 3.5rem;
+    color: white;
+    font-weight: bolder;
+  }
 }
