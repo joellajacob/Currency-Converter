@@ -15,7 +15,7 @@ A responsive and interactive web application that converts currencies using live
 ### Desktop View
 ![Desktop Screenshot](screenshot-desktop.png)
 ### Mobile View
-![Mobile Screenshot](screenshot-desktop.png)
+![Mobile Screenshot](screenshot-mobile.png)
 ## API Used
 1. [Fawaz Ahmed Exchange Rate API](https://github.com/fawazahmed0/exchange-api)
    - Base URL: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies
